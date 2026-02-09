@@ -14,8 +14,6 @@ export default function Header() {
 
                 <nav className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
                     <Link href="/" className="hover:text-foreground transition-colors">Latest</Link>
-                    <span className="text-border">/</span>
-                    <Link href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50">About</Link>
                 </nav>
             </div>
         </header>

@@ -50,7 +50,7 @@ export async function fetchRSSNews(): Promise<Article[]> {
                 }
 
                 allArticles.push({
-                    id: Buffer.from(item.link).toString("base64"), // Generate stable ID from link
+                    id: Buffer.from(item.link).toString("hex"), // Generate stable ID from link (hex is URL-safe)
                     title: item.title,
                     summary: item.contentSnippet || item.content?.substring(0, 150) + "..." || "",
                     content: item.content || "", // Full content might be limited in RSS

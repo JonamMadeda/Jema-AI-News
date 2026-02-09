@@ -9,6 +9,18 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "JEMA AI NEWS — Minimalist Intelligence",
   description: "Curated daily updates on the future of artificial intelligence, machine learning, and technology ethics. Stripped down for clarity.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Jema AI News",
+  },
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
