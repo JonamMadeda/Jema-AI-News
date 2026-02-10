@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 interface PaginationProps {
     currentPage: number;
@@ -7,6 +10,14 @@ interface PaginationProps {
 }
 
 export default function Pagination({ currentPage, totalPages }: PaginationProps) {
+    const searchParams = useSearchParams();
+
+    const createPageUrl = (pageNumber: number) => {
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("page", pageNumber.toString());
+        return `/?${params.toString()}`;
+    };
+
     const prevPage = currentPage > 1 ? currentPage - 1 : null;
     const nextPage = currentPage < totalPages ? currentPage + 1 : null;
 
@@ -17,7 +28,7 @@ export default function Pagination({ currentPage, totalPages }: PaginationProps)
             <div className="flex-1">
                 {prevPage ? (
                     <Link
-                        href={`/?page=${prevPage}`}
+                        href={createPageUrl(prevPage)}
                         className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                     >
                         <ChevronLeft className="w-4 h-4 mr-1" />
@@ -39,7 +50,7 @@ export default function Pagination({ currentPage, totalPages }: PaginationProps)
             <div className="flex-1 flex justify-end">
                 {nextPage ? (
                     <Link
-                        href={`/?page=${nextPage}`}
+                        href={createPageUrl(nextPage)}
                         className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                     >
                         Next
@@ -55,3 +66,4 @@ export default function Pagination({ currentPage, totalPages }: PaginationProps)
         </div>
     );
 }
+
