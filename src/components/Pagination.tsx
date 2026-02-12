@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useSearchParams } from "next/navigation";
 
 interface PaginationProps {
     currentPage: number;
@@ -10,60 +7,37 @@ interface PaginationProps {
 }
 
 export default function Pagination({ currentPage, totalPages }: PaginationProps) {
-    const searchParams = useSearchParams();
-
-    const createPageUrl = (pageNumber: number) => {
-        const params = new URLSearchParams(searchParams.toString());
-        params.set("page", pageNumber.toString());
-        return `/?${params.toString()}`;
-    };
-
-    const prevPage = currentPage > 1 ? currentPage - 1 : null;
-    const nextPage = currentPage < totalPages ? currentPage + 1 : null;
-
-    if (totalPages <= 1) return null;
-
     return (
-        <div className="flex items-center justify-between mt-12 py-4 border-t border-border/40">
-            <div className="flex-1">
-                {prevPage ? (
-                    <Link
-                        href={createPageUrl(prevPage)}
-                        className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                        <ChevronLeft className="w-4 h-4 mr-1" />
-                        Previous
-                    </Link>
-                ) : (
-                    <span className="inline-flex items-center text-sm font-medium text-muted-foreground/50 cursor-not-allowed">
-                        <ChevronLeft className="w-4 h-4 mr-1" />
-                        Previous
-                    </span>
-                )}
-            </div>
+        <div className="flex justify-center items-center gap-4 py-8 mt-4 border-t border-zinc-100">
+            {currentPage > 1 ? (
+                <Link
+                    href={`/?page=${currentPage - 1}`}
+                    className="flex items-center gap-1 text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors px-3 py-2 rounded-lg hover:bg-zinc-100"
+                >
+                    <ChevronLeft className="w-4 h-4" /> Previous
+                </Link>
+            ) : (
+                <span className="flex items-center gap-1 text-sm font-medium text-zinc-300 px-3 py-2 cursor-not-allowed">
+                    <ChevronLeft className="w-4 h-4" /> Previous
+                </span>
+            )}
 
-            <div className="text-sm text-muted-foreground">
-                Page <span className="font-medium text-foreground">{currentPage}</span> of{" "}
-                <span className="font-medium text-foreground">{totalPages}</span>
-            </div>
+            <span className="text-sm text-zinc-400 font-medium">
+                Page {currentPage} of {totalPages}
+            </span>
 
-            <div className="flex-1 flex justify-end">
-                {nextPage ? (
-                    <Link
-                        href={createPageUrl(nextPage)}
-                        className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                        Next
-                        <ChevronRight className="w-4 h-4 ml-1" />
-                    </Link>
-                ) : (
-                    <span className="inline-flex items-center text-sm font-medium text-muted-foreground/50 cursor-not-allowed">
-                        Next
-                        <ChevronRight className="w-4 h-4 ml-1" />
-                    </span>
-                )}
-            </div>
+            {currentPage < totalPages ? (
+                <Link
+                    href={`/?page=${currentPage + 1}`}
+                    className="flex items-center gap-1 text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors px-3 py-2 rounded-lg hover:bg-zinc-100"
+                >
+                    Next <ChevronRight className="w-4 h-4" />
+                </Link>
+            ) : (
+                <span className="flex items-center gap-1 text-sm font-medium text-zinc-300 px-3 py-2 cursor-not-allowed">
+                    Next <ChevronRight className="w-4 h-4" />
+                </span>
+            )}
         </div>
     );
 }
-

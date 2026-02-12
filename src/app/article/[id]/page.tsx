@@ -1,103 +1,71 @@
-import { mockArticles } from "@/lib/mockData";
-import { fetchRSSNews } from "@/lib/rssService";
-import { Calendar, User, ArrowLeft, ExternalLink } from "lucide-react";
-import Image from "next/image";
+import { getArticleById } from "@/lib/newsService";
 import Link from "next/link";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
 
 interface ArticlePageProps {
-    params: Promise<{
-        id: string;
-    }>;
+    params: { id: string };
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
     const { id } = await params;
-
-    // Try to find in RSS feed first
-    const rssArticles = await fetchRSSNews();
-    let article = rssArticles.find((a) => a.id === id);
-
-    // Fallback to mock data
-    if (!article) {
-        article = mockArticles.find((a) => a.id === id);
-    }
+    const decodedId = decodeURIComponent(id);
+    const article = await getArticleById(decodedId);
 
     if (!article) {
-        return notFound();
+        notFound();
     }
+
+    const dateFormatted = new Date(article.publishedAt).toLocaleDateString('en-US', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+    });
 
     return (
-        <article className="container mx-auto py-8 px-4 md:px-8 max-w-3xl">
+        <div className="container mx-auto px-4 max-w-2xl py-8 min-h-screen">
             <Link
                 href="/"
-                className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
+                className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-900 mb-12 transition-colors group"
             >
-                <ArrowLeft className="w-4 h-4 mr-1" />
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Back to News
             </Link>
 
-            <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-primary-foreground bg-primary rounded-full mb-4">
-                    {article.category}
-                </span>
-                <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">
-                    {article.title}
-                </h1>
-                <div className="flex items-center gap-6 text-sm text-muted-foreground mb-8 border-b pb-8">
-                    <div className="flex items-center gap-2">
-                        <User className="w-4 h-4" />
-                        <span>By <span className="font-medium text-foreground">{article.author}</span></span>
+            <article className="space-y-8">
+                <header className="space-y-4">
+                    <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-[#FF2400] uppercase">
+                        <span>{article.source}</span>
+                        <span className="text-zinc-200">•</span>
+                        <span className="text-zinc-400">{dateFormatted}</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        <time dateTime={article.date}>{new Date(article.date).toLocaleDateString(undefined, {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                        })}</time>
-                    </div>
-                    {article.source && (
-                        <div className="flex items-center gap-2">
-                            <span className="font-medium text-foreground">Source: {article.source}</span>
-                        </div>
-                    )}
-                </div>
-            </div>
 
-            <div className="relative w-full aspect-video mb-10 rounded-xl overflow-hidden shadow-lg bg-muted">
-                {article.imageUrl ? (
-                    <Image
-                        src={article.imageUrl}
-                        alt={article.title}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                ) : (
-                    <div className="flex items-center justify-center h-full text-muted-foreground">No Image Available</div>
-                )}
-            </div>
+                    <h1 className="text-3xl md:text-5xl font-extrabold text-zinc-900 tracking-tight leading-[1.1]">
+                        {article.title}
+                    </h1>
+                </header>
 
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-                <p className="lead text-xl text-muted-foreground font-medium mb-6">
-                    {article.summary}
-                </p>
-                <div className="whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: article.content }} />
+                <div className="prose prose-zinc prose-lg max-w-none">
+                    <p className="text-xl md:text-2xl text-zinc-600 leading-relaxed font-medium">
+                        {article.summary}
+                    </p>
 
-                {article.link && (
-                    <div className="mt-8">
-                        <a
-                            href={article.link}
+                    {/* In a real app, we might fetch more content here if available */}
+                    <div className="mt-12 p-8 bg-zinc-50 rounded-3xl border border-zinc-100 space-y-4">
+                        <h3 className="text-lg font-bold text-zinc-900">Want to read the full story?</h3>
+                        <p className="text-zinc-600">This article was originally published on {article.source}. Click below to visit the original site and read the complete coverage.</p>
+                        <Link
+                            href={article.url}
                             target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-primary-foreground bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2400] text-white rounded-full font-bold text-sm hover:shadow-lg hover:opacity-90 transition-all active:scale-95"
                         >
-                            Read Full Story on {article.source || "Source"} <ExternalLink className="ml-2 -mr-1 w-5 h-5" />
-                        </a>
+                            Read full article on {article.source}
+                            <ExternalLink className="w-4 h-4" />
+                        </Link>
                     </div>
-                )}
-            </div>
-        </article>
+                </div>
+            </article>
+        </div>
     );
 }
