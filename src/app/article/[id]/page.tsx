@@ -24,7 +24,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     });
 
     return (
-        <div className="container mx-auto px-4 max-w-3xl py-8 min-h-screen">
+        <div className="mx-auto px-4 max-w-3xl py-8 min-h-screen">
             <Link
                 href="/"
                 className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-900 mb-12 transition-colors group"

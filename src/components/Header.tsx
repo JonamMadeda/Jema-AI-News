@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 py-3">
-            <div className="container mx-auto max-w-5xl flex items-center justify-between px-4">
+            <div className="mx-auto max-w-5xl flex items-center justify-between px-4">
                 <Link href="/" className="group" onClick={() => setIsOpen(false)}>
                     <span className="text-lg sm:text-xl font-bold tracking-tight text-slate-900">
                         <span className="text-accent underline decoration-accent/20 underline-offset-4">JEMA</span> AI NEWS
@@ -28,7 +28,7 @@ export default function Header() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden p-2 -mr-2 text-slate-500 hover:text-accent transition-colors"
+                    className="md:hidden p-2 -mr-4 text-slate-500 hover:text-accent transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     <div className="relative w-6 h-6 overflow-hidden">

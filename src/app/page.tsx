@@ -78,7 +78,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const paginatedItems = filteredItems.slice((currentPage - 1) * limit, currentPage * limit);
 
   return (
-    <div className="mx-auto max-w-5xl mb-6 py-2">
+    <div className="mx-auto max-w-5xl mb-6 py-2 px-4">
       <DateHeader
         count={total}
       />

@@ -10,7 +10,7 @@ export default function SavedPage() {
     const { savedItems } = useSavedNews();
 
     return (
-        <div className="container mx-auto px-4 max-w-5xl py-8 min-h-screen">
+        <div className="mx-auto px-4 max-w-5xl py-8 min-h-screen">
             <Link
                 href="/"
                 className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-900 mb-8 transition-colors group"

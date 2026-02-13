@@ -62,7 +62,7 @@ export default function FilterBar() {
             </div>
 
             {/* Filter Chips */}
-            <div className="flex overflow-x-auto no-scrollbar gap-2 py-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex flex-wrap sm:flex-nowrap sm:overflow-x-auto no-scrollbar gap-2 py-2">
                 {CATEGORIES.map((cat) => {
                     const isActive = currentCategory === cat;
                     return (

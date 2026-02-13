@@ -25,12 +25,12 @@ export default function NewsCard({ item }: NewsCardProps) {
     };
 
     return (
-        <div className="group relative py-6 border-b border-slate-100 last:border-0 hover:bg-white hover:premium-shadow-hover hover:border-transparent transition-all duration-300 -mx-4 px-4 sm:mx-0 sm:px-6 sm:rounded-xl">
+        <div className="group relative py-6 border-b border-slate-100 last:border-0 hover:bg-white hover:premium-shadow-hover hover:border-transparent transition-all duration-300 px-2 sm:px-6 sm:rounded-xl overflow-hidden">
             <Link
                 href={`/article/${encodeURIComponent(item.id)}`}
                 className="block"
             >
-                <div className="flex flex-col gap-3 pr-8">
+                <div className="flex flex-col gap-3 pr-8 min-w-0">
                     {/* Metadata Row */}
                     <div className="flex items-center gap-2 text-[11px] sm:text-[13px] font-bold uppercase tracking-wider text-slate-400">
                         <span className="text-slate-500">{item.source}</span>
@@ -39,12 +39,12 @@ export default function NewsCard({ item }: NewsCardProps) {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-accent transition-colors leading-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-accent transition-colors leading-tight break-words">
                         {item.title}
                     </h3>
 
                     {/* Summary */}
-                    <p className="text-base text-slate-500 line-clamp-3 leading-relaxed max-w-4xl">
+                    <p className="text-base text-slate-500 line-clamp-3 leading-relaxed max-w-4xl break-words">
                         {item.summary}
                     </p>
 

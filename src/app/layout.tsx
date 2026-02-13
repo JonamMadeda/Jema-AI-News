@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "JEMA AI NEWS — Minimalist Intelligence",
   description: "Your daily focus and weekly roundup on the future of artificial intelligence, machine learning, and technology ethics. Curated for clarity.",
   manifest: "/manifest.json",
+  themeColor: "#581c87",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -36,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased font-sans`}>
         <TopProgressBar />
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col overflow-x-hidden">
           <Header />
           <main className="flex-1 flex flex-col bg-subtle-glow">
             {children}

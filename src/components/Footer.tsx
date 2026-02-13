@@ -3,7 +3,7 @@ export default function Footer() {
 
     return (
         <footer className="w-full bg-slate-50 border-t border-slate-200 py-12 mt-20">
-            <div className="container mx-auto max-w-5xl px-4">
+            <div className="mx-auto max-w-5xl px-4">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                     <div className="space-y-4">
                         {/* Assuming Link component is imported or defined elsewhere, or should be a regular <a> tag */}
