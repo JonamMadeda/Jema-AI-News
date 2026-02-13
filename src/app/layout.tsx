@@ -5,11 +5,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TopProgressBar from "@/components/TopProgressBar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "JEMA AI NEWS — Minimalist Intelligence",
-  description: "Curated daily updates on the future of artificial intelligence, machine learning, and technology ethics. Stripped down for clarity.",
+  description: "Your daily focus and weekly roundup on the future of artificial intelligence, machine learning, and technology ethics. Curated for clarity.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -31,11 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} antialiased font-sans`}>
         <TopProgressBar />
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="flex-1 flex flex-col">
+          <main className="flex-1 flex flex-col bg-subtle-glow">
             {children}
           </main>
           <Footer />

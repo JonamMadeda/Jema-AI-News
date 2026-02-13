@@ -23,12 +23,23 @@ export default async function Home({ searchParams }: HomeProps) {
   const category = params?.category || "All";
   const limit = 7;
 
-  // Fetch all for filtering (in a real high-scale app, we'd filter at the DB level)
+  // Fetch all for filtering
   const { items: allItems } = await getNews(1, 100);
 
-  // Apply Search & Category Filters
-  let filteredItems = allItems;
+  // AUTOMATIC Focus: Enforce a strict 7-day window (Weekly maximum)
+  // while prioritizing the latest 24h (Daily focus) via existing sort.
+  const now = new Date();
+  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
+  let filteredItems = allItems.filter(item => new Date(item.publishedAt) >= sevenDaysAgo);
+
+  // If we have very few items in 7 days, fall back to showing the latest 20 total
+  // to ensure the site never looks empty.
+  if (filteredItems.length < 5) {
+    filteredItems = allItems.slice(0, 20);
+  }
+
+  // Apply Search & Category Filters
   if (query) {
     filteredItems = filteredItems.filter(item =>
       item.title.toLowerCase().includes(query) ||
@@ -67,14 +78,16 @@ export default async function Home({ searchParams }: HomeProps) {
   const paginatedItems = filteredItems.slice((currentPage - 1) * limit, currentPage * limit);
 
   return (
-    <div className="container mx-auto px-4 max-w-2xl py-8">
-      <DateHeader count={total} />
+    <div className="mx-auto max-w-5xl mb-6 py-2">
+      <DateHeader
+        count={total}
+      />
 
-      <Suspense fallback={<div className="h-10 bg-zinc-100 rounded-2xl mb-10 animate-pulse" />}>
+      <Suspense fallback={<div className="h-8 bg-slate-50 rounded mb-4 animate-pulse" />}>
         <FilterBar />
       </Suspense>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-1">
         <Suspense fallback={
           Array.from({ length: 5 }).map((_, i) => <NewsSkeleton key={i} />)
         }>

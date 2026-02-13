@@ -49,37 +49,29 @@ export default function FilterBar() {
         <div className="mb-10 space-y-6">
             {/* Search Input */}
             <div className="relative group">
-                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                    <Search className="h-4 w-4 text-zinc-400 group-focus-within:text-[#FF2400] transition-colors" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Search className="h-4 w-4 text-slate-400 group-focus-within:text-accent transition-colors" />
                 </div>
                 <input
                     type="text"
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
                     placeholder="Search news..."
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl py-3.5 pl-12 pr-10 text-sm text-zinc-900 placeholder:text-zinc-400 focus:bg-white focus:ring-2 focus:ring-[#FF2400]/10 focus:border-[#FF2400] transition-all shadow-sm"
+                    className="w-full bg-white border border-slate-200 rounded-lg pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/5 focus:border-accent/30 transition-all premium-shadow"
                 />
-                {searchInput && (
-                    <button
-                        onClick={() => setSearchInput("")}
-                        className="absolute inset-y-0 right-4 flex items-center text-zinc-400 hover:text-zinc-600"
-                    >
-                        <X className="h-4 w-4" />
-                    </button>
-                )}
             </div>
 
             {/* Filter Chips */}
-            <div className="flex overflow-x-auto no-scrollbar gap-2.5 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap">
+            <div className="flex overflow-x-auto no-scrollbar gap-2 py-2 -mx-4 px-4 sm:mx-0 sm:px-0">
                 {CATEGORIES.map((cat) => {
                     const isActive = currentCategory === cat;
                     return (
                         <button
                             key={cat}
                             onClick={() => setCategory(cat)}
-                            className={`flex-none px-5 py-2 rounded-full text-xs font-bold transition-all active:scale-95 shadow-sm whitespace-nowrap ${isActive
-                                ? "bg-[#FF2400] text-white"
-                                : "bg-white text-zinc-600 border border-zinc-200 hover:bg-zinc-50 hover:text-zinc-900"
+                            className={`flex-none px-3 py-1 sm:px-4 sm:py-1.5 text-[11px] sm:text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap rounded-full ${isActive
+                                ? "bg-accent text-white shadow-sm shadow-accent/20"
+                                : "text-slate-500 bg-slate-100/50 hover:bg-slate-100 hover:text-slate-700"
                                 }`}
                         >
                             {cat}

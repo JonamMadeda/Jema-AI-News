@@ -25,41 +25,48 @@ export default function NewsCard({ item }: NewsCardProps) {
     };
 
     return (
-        <div className="group relative py-8 border-b border-zinc-200/60 last:border-0 hover:bg-zinc-50/50 transition-colors -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div className="group relative py-6 border-b border-slate-100 last:border-0 hover:bg-white hover:premium-shadow-hover hover:border-transparent transition-all duration-300 -mx-4 px-4 sm:mx-0 sm:px-6 sm:rounded-xl">
             <Link
                 href={`/article/${encodeURIComponent(item.id)}`}
                 className="block"
             >
-                <div className="flex flex-col gap-2.5 pr-8"> {/* Padding for bookmark button */}
+                <div className="flex flex-col gap-3 pr-8">
                     {/* Metadata Row */}
-                    <div className="flex items-center gap-2.5 text-[11px] font-bold tracking-[0.1em] text-zinc-400 uppercase">
-                        <span className="text-zinc-900">{item.source}</span>
-                        <span className="text-zinc-200">•</span>
+                    <div className="flex items-center gap-2 text-[11px] sm:text-[13px] font-bold uppercase tracking-wider text-slate-400">
+                        <span className="text-slate-500">{item.source}</span>
+                        <span className="text-slate-300">•</span>
                         <span>{dateFormatted}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl md:text-[26px] font-extrabold text-[#09090b] group-hover:text-zinc-800 transition-colors leading-[1.15] tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-accent transition-colors leading-tight">
                         {item.title}
                     </h3>
 
                     {/* Summary */}
-                    <p className="text-[15px] md:text-lg text-zinc-600 line-clamp-2 leading-relaxed max-w-3xl">
+                    <p className="text-base text-slate-500 line-clamp-3 leading-relaxed max-w-4xl">
                         {item.summary}
                     </p>
+
+                    <div className="flex items-center gap-1.5 pt-2 group-hover:translate-x-1 transition-all text-slate-400 group-hover:text-slate-600">
+                        <span className="text-xs font-bold uppercase tracking-widest">
+                            Read Summary
+                        </span>
+                        <span>→</span>
+                    </div>
                 </div>
             </Link>
 
-            {/* Bookmark Button */}
+            {/* Save Button */}
             <button
                 onClick={handleSave}
-                className="absolute top-8 right-0 p-2 text-zinc-300 hover:text-[#FF2400] transition-colors"
+                className="absolute top-4 right-0 p-2 text-slate-200 hover:text-slate-400 transition-colors"
                 title={saved ? "Remove from saved" : "Save for later"}
             >
                 {saved ? (
-                    <BookmarkCheck className="w-5 h-5 text-[#FF2400]" />
+                    <BookmarkCheck className="w-4 h-4 text-accent" />
                 ) : (
-                    <Bookmark className="w-5 h-5" />
+                    <Bookmark className="w-4 h-4" />
                 )}
             </button>
         </div>

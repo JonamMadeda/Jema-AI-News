@@ -9,22 +9,22 @@ function ProgressBarInner() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         const timer = setTimeout(() => {
-            setLoading(true);
-        }, 0);
-        const timeout = setTimeout(() => setLoading(false), 500);
-        return () => {
-            clearTimeout(timer);
-            clearTimeout(timeout);
-        };
+            setLoading(false);
+        }, 400); // Brief loading state on navigation
+
+        return () => clearTimeout(timer);
     }, [pathname, searchParams]);
 
     if (!loading) return null;
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-[100] h-1 bg-[#FF2400]/10 overflow-hidden">
-            <div className="h-full bg-[#FF2400] transition-all duration-500 ease-out animate-[loadingProgress_1.5s_infinite]"
-                style={{ width: '40%' }} />
+        <div className="fixed top-0 left-0 right-0 z-[100] h-[3px] bg-accent/5 overflow-hidden">
+            <div
+                className="h-full bg-accent transition-all duration-300 ease-out animate-[loadingProgress_1.5s_infinite]"
+                style={{ width: '40%' }}
+            />
         </div>
     );
 }

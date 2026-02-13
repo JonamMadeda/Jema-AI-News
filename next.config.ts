@@ -22,7 +22,6 @@ const nextConfig: NextConfig = {
   experimental: {
     // Other experimental options can go here
   },
-  // @ts-ignore - Turbopack config is recognized by the dev server but may not be in the current type definition
   turbopack: {},
 };
 
