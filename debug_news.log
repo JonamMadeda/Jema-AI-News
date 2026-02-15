@@ -1,0 +1,72 @@
+2026-02-15T21:15:50.331Z: Starting getNews...
+2026-02-15T21:15:50.332Z: Fetching fresh news...
+2026-02-15T21:15:50.352Z: Starting getNews...
+2026-02-15T21:15:50.353Z: Fetching fresh news...
+2026-02-15T21:15:50.463Z: Fetched Wired: 10 items. Latest: Sun, 15 Feb 2026 11:30:00 +0000
+2026-02-15T21:15:50.476Z: Fetched Wired: 10 items. Latest: Sun, 15 Feb 2026 11:30:00 +0000
+2026-02-15T21:15:50.635Z: Fetched TechCrunch: 20 items. Latest: Sun, 15 Feb 2026 21:11:28 +0000
+2026-02-15T21:15:50.656Z: Fetched TechCrunch: 20 items. Latest: Sun, 15 Feb 2026 21:11:28 +0000
+2026-02-15T21:15:50.793Z: Fetched MIT Tech Review: 10 items. Latest: Thu, 12 Feb 2026 11:00:00 +0000
+2026-02-15T21:15:50.902Z: Fetched MIT Tech Review: 10 items. Latest: Thu, 12 Feb 2026 11:00:00 +0000
+2026-02-15T21:15:51.009Z: Fetched The Verge: 10 items. Latest: 2026-02-15T17:30:00.000Z
+2026-02-15T21:15:51.017Z: Fetched The Verge: 10 items. Latest: 2026-02-15T17:30:00.000Z
+2026-02-15T21:15:51.029Z: Failed to fetch Artificial Intelligence News: Error: socket hang up
+2026-02-15T21:15:51.106Z: Fetched OpenAI: 846 items. Latest: Fri, 13 Feb 2026 11:00:00 GMT
+2026-02-15T21:15:51.172Z: Fetched OpenAI: 846 items. Latest: Fri, 13 Feb 2026 11:00:00 GMT
+2026-02-15T21:15:51.179Z: Failed to fetch Artificial Intelligence News: Error: socket hang up
+2026-02-15T21:15:51.808Z: Fetched Google News (AI): 70 items. Latest: Sun, 15 Feb 2026 13:29:00 GMT
+2026-02-15T21:15:51.836Z: Fetched Analytics Vidhya: 10 items. Latest: Sun, 15 Feb 2026 10:50:04 +0000
+2026-02-15T21:15:51.840Z: Total sorted items: 976
+2026-02-15T21:15:51.841Z: Latest item date after sort: 2026-02-13T11:00:00.000Z
+2026-02-15T21:15:51.874Z: Fetched Google News (AI): 70 items. Latest: Sun, 15 Feb 2026 13:29:00 GMT
+2026-02-15T21:15:51.891Z: Fetched Analytics Vidhya: 10 items. Latest: Sun, 15 Feb 2026 10:50:04 +0000
+2026-02-15T21:15:51.893Z: Total sorted items: 976
+2026-02-15T21:15:51.894Z: Latest item date after sort: 2026-02-13T11:00:00.000Z
+2026-02-15T21:16:01.977Z: Starting getNews...
+2026-02-15T21:16:01.978Z: Fetching fresh news...
+2026-02-15T21:16:02.086Z: Starting getNews...
+2026-02-15T21:16:02.087Z: Fetching fresh news...
+2026-02-15T21:16:02.128Z: Fetched Wired: 10 items. Latest: Sun, 15 Feb 2026 11:30:00 +0000
+2026-02-15T21:16:02.172Z: Fetched Wired: 10 items. Latest: Sun, 15 Feb 2026 11:30:00 +0000
+2026-02-15T21:16:02.218Z: Fetched Google News (AI): 70 items. Latest: Sun, 15 Feb 2026 13:29:00 GMT
+2026-02-15T21:16:02.300Z: Fetched TechCrunch: 20 items. Latest: Sun, 15 Feb 2026 21:11:28 +0000
+2026-02-15T21:16:02.318Z: Fetched Google News (AI): 70 items. Latest: Sun, 15 Feb 2026 13:29:00 GMT
+2026-02-15T21:16:02.367Z: Fetched TechCrunch: 20 items. Latest: Sun, 15 Feb 2026 21:11:28 +0000
+2026-02-15T21:16:02.417Z: Fetched MIT Tech Review: 10 items. Latest: Thu, 12 Feb 2026 11:00:00 +0000
+2026-02-15T21:16:02.483Z: Fetched MIT Tech Review: 10 items. Latest: Thu, 12 Feb 2026 11:00:00 +0000
+2026-02-15T21:16:02.593Z: Fetched OpenAI: 846 items. Latest: Fri, 13 Feb 2026 11:00:00 GMT
+2026-02-15T21:16:02.621Z: Fetched The Verge: 10 items. Latest: 2026-02-15T17:30:00.000Z
+2026-02-15T21:16:02.695Z: Failed to fetch Artificial Intelligence News: Error: socket hang up
+2026-02-15T21:16:02.758Z: Failed to fetch Artificial Intelligence News: Error: socket hang up
+2026-02-15T21:16:03.112Z: Fetched Analytics Vidhya: 10 items. Latest: Sun, 15 Feb 2026 10:50:04 +0000
+2026-02-15T21:16:03.116Z: Total sorted items: 976
+2026-02-15T21:16:03.117Z: Latest item date after sort: 2026-02-13T11:00:00.000Z
+2026-02-15T21:16:03.540Z: Fetched Analytics Vidhya: 10 items. Latest: Sun, 15 Feb 2026 10:50:04 +0000
+2026-02-15T21:16:03.735Z: Fetched The Verge: 10 items. Latest: 2026-02-15T17:30:00.000Z
+2026-02-15T21:16:05.811Z: Fetched OpenAI: 846 items. Latest: Fri, 13 Feb 2026 11:00:00 GMT
+2026-02-15T21:16:05.817Z: Total sorted items: 976
+2026-02-15T21:16:05.818Z: Latest item date after sort: 2026-02-13T11:00:00.000Z
+2026-02-15T21:16:55.945Z: Starting getNews...
+2026-02-15T21:16:55.946Z: Fetching fresh news...
+2026-02-15T21:16:56.012Z: Starting getNews...
+2026-02-15T21:16:56.013Z: Fetching fresh news...
+2026-02-15T21:16:56.108Z: Fetched Wired: 10 items. Latest: Sun, 15 Feb 2026 11:30:00 +0000
+2026-02-15T21:16:56.117Z: Fetched Wired: 10 items. Latest: Sun, 15 Feb 2026 11:30:00 +0000
+2026-02-15T21:16:56.246Z: Fetched Google News (AI): 70 items. Latest: Sun, 15 Feb 2026 13:29:00 GMT
+2026-02-15T21:16:56.266Z: Fetched Google News (AI): 70 items. Latest: Sun, 15 Feb 2026 13:29:00 GMT
+2026-02-15T21:16:56.281Z: Fetched TechCrunch: 20 items. Latest: Sun, 15 Feb 2026 21:11:28 +0000
+2026-02-15T21:16:56.295Z: Fetched TechCrunch: 20 items. Latest: Sun, 15 Feb 2026 21:11:28 +0000
+2026-02-15T21:16:56.411Z: Fetched MIT Tech Review: 10 items. Latest: Thu, 12 Feb 2026 11:00:00 +0000
+2026-02-15T21:16:56.427Z: Fetched MIT Tech Review: 10 items. Latest: Thu, 12 Feb 2026 11:00:00 +0000
+2026-02-15T21:16:56.626Z: Fetched OpenAI: 846 items. Latest: Fri, 13 Feb 2026 11:00:00 GMT
+2026-02-15T21:16:56.697Z: Fetched OpenAI: 846 items. Latest: Fri, 13 Feb 2026 11:00:00 GMT
+2026-02-15T21:16:56.711Z: Fetched The Verge: 10 items. Latest: 2026-02-15T17:30:00.000Z
+2026-02-15T21:16:56.720Z: Fetched The Verge: 10 items. Latest: 2026-02-15T17:30:00.000Z
+2026-02-15T21:16:56.730Z: Failed to fetch Artificial Intelligence News: Error: socket hang up
+2026-02-15T21:16:56.879Z: Failed to fetch Artificial Intelligence News: Error: socket hang up
+2026-02-15T21:16:57.088Z: Fetched Analytics Vidhya: 10 items. Latest: Sun, 15 Feb 2026 10:50:04 +0000
+2026-02-15T21:16:57.091Z: Total sorted items: 976
+2026-02-15T21:16:57.091Z: Latest item date after sort: 2026-02-15T21:11:28.000Z
+2026-02-15T21:16:57.141Z: Fetched Analytics Vidhya: 10 items. Latest: Sun, 15 Feb 2026 10:50:04 +0000
+2026-02-15T21:16:57.143Z: Total sorted items: 976
+2026-02-15T21:16:57.144Z: Latest item date after sort: 2026-02-15T21:11:28.000Z

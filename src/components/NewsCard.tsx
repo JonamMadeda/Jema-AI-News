@@ -25,34 +25,34 @@ export default function NewsCard({ item }: NewsCardProps) {
     };
 
     return (
-        <div className="group relative py-6 border-b border-slate-100 last:border-0 hover:bg-white hover:premium-shadow-hover hover:border-transparent transition-all duration-300 px-2 sm:px-6 sm:rounded-xl overflow-hidden">
+        <div className="group relative py-8 border-b border-slate-200 last:border-0 hover:bg-slate-50/50 transition-colors duration-300 -mx-4 px-4 sm:mx-0 sm:px-0">
             <Link
                 href={`/article/${encodeURIComponent(item.id)}`}
                 className="block"
             >
-                <div className="flex flex-col gap-3 pr-8 min-w-0">
+                <div className="flex flex-col gap-2 pr-8 min-w-0 max-w-3xl">
                     {/* Metadata Row */}
-                    <div className="flex items-center gap-2 text-[11px] sm:text-[13px] font-bold uppercase tracking-wider text-slate-400">
-                        <span className="text-slate-500">{item.source}</span>
+                    <div className="flex items-center gap-2 text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-500">
+                        <span className="text-slate-900">{item.source}</span>
                         <span className="text-slate-300">•</span>
                         <span>{dateFormatted}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-accent transition-colors leading-tight break-words">
+                    <h3 className="text-lg sm:text-2xl font-bold text-slate-900 group-hover:text-accent transition-colors leading-tight tracking-tight break-words py-1">
                         {item.title}
                     </h3>
 
                     {/* Summary */}
-                    <p className="text-base text-slate-500 line-clamp-3 leading-relaxed max-w-4xl break-words">
+                    <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-4xl break-words font-medium">
                         {item.summary}
                     </p>
 
-                    <div className="flex items-center gap-1.5 pt-2 group-hover:translate-x-1 transition-all text-slate-400 group-hover:text-slate-600">
-                        <span className="text-xs font-bold uppercase tracking-widest">
+                    <div className="flex items-center gap-2 pt-2 group-hover:translate-x-1 transition-all text-slate-900">
+                        <span className="text-[9px] font-black uppercase tracking-widest">
                             Read Summary
                         </span>
-                        <span>→</span>
+                        <span className="text-[10px] font-bold">→</span>
                     </div>
                 </div>
             </Link>
@@ -60,13 +60,13 @@ export default function NewsCard({ item }: NewsCardProps) {
             {/* Save Button */}
             <button
                 onClick={handleSave}
-                className="absolute top-4 right-0 p-2 text-slate-200 hover:text-slate-400 transition-colors"
+                className="absolute top-8 right-0 sm:right-0 p-2 text-slate-300 hover:text-accent transition-colors"
                 title={saved ? "Remove from saved" : "Save for later"}
             >
                 {saved ? (
-                    <BookmarkCheck className="w-4 h-4 text-accent" />
+                    <BookmarkCheck className="w-5 h-5 text-accent" />
                 ) : (
-                    <Bookmark className="w-4 h-4" />
+                    <Bookmark className="w-5 h-5" />
                 )}
             </button>
         </div>

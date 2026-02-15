@@ -8,9 +8,10 @@
   --card-foreground: #0f172a;
   --popover: #ffffff;
   --popover-foreground: #0f172a;
-  --primary: #0f172a;
-  /* Neutral Dark text */
-  --primary-foreground: #ffffff;
+  --primary: #ffffff;
+  /* White */
+  --primary-foreground: #0f172a;
+  /* Navy/Slate 900 for contrast */
   --secondary: #f8fafc;
   /* Slate 50 */
   --secondary-foreground: #0f172a;
@@ -18,15 +19,15 @@
   /* Slate 50 */
   --muted-foreground: #64748b;
   /* Slate 500 */
-  --accent: #581c87;
-  /* Dark Purple Accent */
+  --accent: #3b0764;
+  /* Dark Purple (Purple 950) */
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #fafafa;
   --border: #e2e8f0;
   /* Standard light slate border */
   --input: #f1f5f9;
-  --ring: #581c87;
+  --ring: #3b0764;
   --radius: 0.25rem;
   /* Standard minimal radius */
 }
@@ -128,7 +129,7 @@ body {
 
 /* Vibrancy Utilities */
 .bg-subtle-glow {
-  background: radial-gradient(circle at 50% -20%, rgba(88, 28, 135, 0.03) 0%, rgba(255, 255, 255, 0) 60%);
+  background: radial-gradient(circle at 50% -20%, rgba(59, 7, 100, 0.03) 0%, rgba(255, 255, 255, 0) 60%);
 }
 
 .premium-shadow {

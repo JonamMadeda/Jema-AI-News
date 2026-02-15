@@ -2,13 +2,21 @@ import Parser from "rss-parser";
 import { NewsItem } from "@/types/news";
 import { rankNews } from "./ranking";
 
-const parser = new Parser();
+const parser = new Parser({
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+});
 
 const FEEDS = [
     { url: "https://techcrunch.com/category/artificial-intelligence/feed/", source: "TechCrunch" },
+    { url: "https://www.theverge.com/rss/index.xml", source: "The Verge" },
+    { url: "https://www.wired.com/feed/tag/ai/latest/rss", source: "Wired" },
+    { url: "https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US:en", source: "Google News (AI)" },
+    { url: "https://www.artificialintelligence-news.com/feed/", source: "Artificial Intelligence News" },
+    { url: "https://www.analyticsvidhya.com/blog/category/artificial-intelligence/feed/", source: "Analytics Vidhya" },
     { url: "https://openai.com/news/rss.xml", source: "OpenAI" },
-    { url: "https://www.technologyreview.com/topic/artificial-intelligence/feed/", source: "MIT Tech Review" },
-    { url: "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml", source: "The Verge" }
+    { url: "https://www.technologyreview.com/topic/artificial-intelligence/feed/", source: "MIT Tech Review" }
 ];
 
 let cachedNews: NewsItem[] | null = null;

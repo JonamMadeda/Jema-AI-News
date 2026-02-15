@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TopProgressBar from "@/components/TopProgressBar";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,8 +40,9 @@ export default function RootLayout({
         <TopProgressBar />
         <div className="flex min-h-screen flex-col overflow-x-hidden">
           <Header />
-          <main className="flex-1 flex flex-col bg-subtle-glow">
+          <main className="flex-1 flex flex-col bg-white">
             {children}
+            <Analytics />
           </main>
           <Footer />
         </div>

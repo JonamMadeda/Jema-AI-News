@@ -46,32 +46,32 @@ export default function FilterBar() {
     };
 
     return (
-        <div className="mb-10 space-y-6">
+        <div className="mb-10 space-y-8">
             {/* Search Input */}
             <div className="relative group">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Search className="h-4 w-4 text-slate-400 group-focus-within:text-accent transition-colors" />
-                </div>
                 <input
                     type="text"
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
-                    placeholder="Search news..."
-                    className="w-full bg-white border border-slate-200 rounded-lg pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/5 focus:border-accent/30 transition-all premium-shadow"
+                    placeholder="Search headlines, events or topics..."
+                    className="w-full bg-transparent border-b border-slate-200 py-3 text-lg sm:text-xl font-medium text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-slate-400 transition-colors"
                 />
+                <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+                    <Search className="h-5 w-5 text-slate-300" />
+                </div>
             </div>
 
-            {/* Filter Chips */}
-            <div className="flex flex-wrap sm:flex-nowrap sm:overflow-x-auto no-scrollbar gap-2 py-2">
+            {/* Filter Categories */}
+            <div className="flex flex-wrap sm:flex-nowrap sm:overflow-x-auto no-scrollbar gap-5 sm:gap-6 border-b border-slate-200">
                 {CATEGORIES.map((cat) => {
                     const isActive = currentCategory === cat;
                     return (
                         <button
                             key={cat}
                             onClick={() => setCategory(cat)}
-                            className={`flex-none px-3 py-1 sm:px-4 sm:py-1.5 text-[11px] sm:text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap rounded-full ${isActive
-                                ? "bg-accent text-white shadow-sm shadow-accent/20"
-                                : "text-slate-500 bg-slate-100/50 hover:bg-slate-100 hover:text-slate-700"
+                            className={`flex-none pb-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-all whitespace-nowrap border-b-2 ${isActive
+                                ? "border-slate-900 text-slate-900"
+                                : "border-transparent text-slate-400 hover:text-slate-600 hover:border-slate-300"
                                 }`}
                         >
                             {cat}

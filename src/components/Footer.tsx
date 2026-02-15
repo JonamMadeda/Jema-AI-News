@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -6,12 +8,19 @@ export default function Footer() {
             <div className="mx-auto max-w-5xl px-4">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                     <div className="space-y-4">
-                        {/* Assuming Link component is imported or defined elsewhere, or should be a regular <a> tag */}
-                        <a href="/" className="group">
-                            <span className="text-xl font-bold tracking-tight text-slate-900">
-                                <span className="text-accent underline decoration-accent/20 underline-offset-4">JEMA</span> AI NEWS
-                            </span>
-                        </a>
+                        <Link href="/" className="group flex items-center gap-3">
+                            {/* Logo Icon */}
+                            <div className="w-8 h-8 bg-accent rounded-md flex items-center justify-center text-white font-bold text-lg premium-shadow">
+                                J
+                            </div>
+                            {/* Logo Text */}
+                            <div className="flex flex-col leading-none">
+                                <span className="flex items-baseline gap-1">
+                                    <span className="text-xl font-black tracking-tighter text-slate-900">JEMA</span>
+                                    <span className="text-xl font-light tracking-tight text-slate-400">AI NEWS</span>
+                                </span>
+                            </div>
+                        </Link>
                         <p className="text-sm tracking-normal normal-case text-slate-500">&copy; {currentYear} All rights reserved.</p>
                     </div>
 

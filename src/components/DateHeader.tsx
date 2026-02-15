@@ -10,12 +10,12 @@ export default function DateHeader({ count }: DateHeaderProps) {
     });
 
     return (
-        <div className="flex items-baseline gap-2 py-4 mb-4 border-b border-slate-50">
-            <h2 className="text-lg font-bold text-slate-900 leading-none">
+        <div className="flex items-center justify-between py-6">
+            <h2 className="text-[10px] sm:text-xs font-black text-slate-900 tracking-widest uppercase">
                 {today}
             </h2>
-            <span className="text-xs text-slate-400">
-                ({count} updates)
+            <span className="bg-slate-50 text-slate-600 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider premium-shadow">
+                {count} Updates
             </span>
         </div>
     );
