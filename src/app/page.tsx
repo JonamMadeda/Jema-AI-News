@@ -21,7 +21,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const currentPage = Number(params?.page) || 1;
   const query = params?.q?.toLowerCase() || "";
   const category = params?.category || "All";
-  const limit = 7;
+  const limit = 5;
 
   // Fetch all for filtering
   const { items: allItems } = await getNews(1, 100);
@@ -49,25 +49,29 @@ export default async function Home({ searchParams }: HomeProps) {
   }
 
   if (category !== "All") {
-    const aiKeywords = ["ai", "machine learning", "neural", "intelligence", "model", "llm", "compute"];
-    const researchKeywords = ["research", "paper", "study", "lab", "openai"];
-    const industryKeywords = ["startup", "market", "funding", "stock", "business", "techcrunch", "investment", "enterprise"];
-    const governanceKeywords = ["policy", "ethic", "law", "regulation", "government", "safety", "governance"];
+    const aiMlKeywords = ["ai", "artificial intelligence", "machine learning", "deep learning", "neural", "llm", "gpt", "gemini", "claude", "model", "transformer", "compute", "training", "inference", "generative"];
+    const startupsVcKeywords = ["startup", "funding", "seed", "series a", "series b", "venture", "vc", "valuation", "unicorn", "founder", "accelerator", "y combinator", "investment", "raise", "techcrunch"];
+    const bigTechKeywords = ["google", "apple", "microsoft", "meta", "amazon", "nvidia", "openai", "anthropic", "tesla", "samsung", "intel", "amd", "qualcomm", "ibm", "oracle"];
+    const researchKeywords = ["research", "paper", "study", "benchmark", "breakthrough", "arxiv", "lab", "scientist", "experiment", "dataset", "algorithm"];
+    const productKeywords = ["launch", "released", "announces", "unveil", "introduce", "update", "feature", "app", "platform", "tool", "api", "beta", "rollout", "available"];
 
     filteredItems = filteredItems.filter(item => {
       const text = (item.title + " " + item.summary + " " + item.source).toLowerCase();
 
-      if (category === "Artificial Intelligence") {
-        return aiKeywords.some(key => text.includes(key));
+      if (category === "AI & ML") {
+        return aiMlKeywords.some(key => text.includes(key));
+      }
+      if (category === "Startups & VC") {
+        return startupsVcKeywords.some(key => text.includes(key));
+      }
+      if (category === "Big Tech") {
+        return bigTechKeywords.some(key => text.includes(key));
       }
       if (category === "Research") {
         return researchKeywords.some(key => text.includes(key));
       }
-      if (category === "Industry") {
-        return industryKeywords.some(key => text.includes(key));
-      }
-      if (category === "Governance") {
-        return governanceKeywords.some(key => text.includes(key));
+      if (category === "Product Launches") {
+        return productKeywords.some(key => text.includes(key));
       }
       return true;
     });

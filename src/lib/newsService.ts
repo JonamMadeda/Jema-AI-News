@@ -23,7 +23,7 @@ let cachedNews: NewsItem[] | null = null;
 let lastFetched: number = 0;
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
-export async function getNews(page: number = 1, limit: number = 7): Promise<{ items: NewsItem[]; total: number }> {
+export async function getNews(page: number = 1, limit: number = 5): Promise<{ items: NewsItem[]; total: number }> {
     try {
         const now = Date.now();
         let allItems: NewsItem[] = [];

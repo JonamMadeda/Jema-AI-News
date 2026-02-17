@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JEMA AI NEWS — Minimalist Intelligence",
+  title: "Jema AI News | Minimalist Intelligence",
   description: "Your daily focus and weekly roundup on the future of artificial intelligence, machine learning, and technology ethics. Curated for clarity.",
   manifest: "/manifest.json",
   themeColor: "#581c87",

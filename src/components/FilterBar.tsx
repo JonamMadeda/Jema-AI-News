@@ -4,7 +4,7 @@ import { Search, X } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const CATEGORIES = ["All", "Artificial Intelligence", "Industry", "Research", "Governance"];
+const CATEGORIES = ["All", "AI & ML", "Startups & VC", "Big Tech", "Research", "Product Launches"];
 
 export default function FilterBar() {
     const router = useRouter();
