@@ -1,11 +1,11 @@
 {
-    "name": "JEMA AI NEWS",
+    "name": "Jema AI News",
     "short_name": "Jema AI News",
     "description": "Stay updated with the latest in Artificial Intelligence.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#581c87",
+    "theme_color": "#1A001A",
     "icons": [
         {
             "src": "/web-app-manifest-192x192.png",

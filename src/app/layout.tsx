@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Jema AI News | Minimalist Intelligence",
   description: "Your daily focus and weekly roundup on the future of artificial intelligence, machine learning, and technology ethics. Curated for clarity.",
   manifest: "/manifest.json",
-  themeColor: "#581c87",
+  themeColor: "#1A001A",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

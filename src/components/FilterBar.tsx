@@ -62,7 +62,7 @@ export default function FilterBar() {
             </div>
 
             {/* Filter Categories */}
-            <div className="flex flex-wrap sm:flex-nowrap sm:overflow-x-auto no-scrollbar gap-5 sm:gap-6 border-b border-slate-200">
+            <div className="flex flex-nowrap overflow-x-auto no-scrollbar gap-5 sm:gap-6 border-b border-slate-200">
                 {CATEGORIES.map((cat) => {
                     const isActive = currentCategory === cat;
                     return (
