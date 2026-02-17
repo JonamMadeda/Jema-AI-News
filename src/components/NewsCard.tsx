@@ -30,7 +30,7 @@ export default function NewsCard({ item }: NewsCardProps) {
                 href={`/article/${encodeURIComponent(item.id)}`}
                 className="block"
             >
-                <div className="flex flex-col gap-2 pr-8 min-w-0 max-w-3xl">
+                <div className="flex flex-col gap-2 pr-8 min-w-0 w-full">
                     {/* Metadata Row */}
                     <div className="flex items-center gap-2 text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-slate-500">
                         <span className="text-slate-900">{item.source}</span>

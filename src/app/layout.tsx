@@ -36,9 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased font-sans`}>
+      <body className={`${inter.variable} antialiased font-sans overflow-x-hidden`}>
         <TopProgressBar />
-        <div className="flex min-h-screen flex-col overflow-x-hidden">
+        <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1 flex flex-col bg-white">
             {children}
